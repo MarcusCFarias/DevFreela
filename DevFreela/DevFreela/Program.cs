@@ -1,5 +1,9 @@
 
-namespace DevFreela
+using DevFreela.Infrastructure.Persistance;
+using DevFreela.Application.Services.Interfaces;
+using DevFreela.Application.Services.Implementations;
+
+namespace DevFreela.API
 {
     public class Program
     {
@@ -8,6 +12,11 @@ namespace DevFreela
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddSingleton<DevFreelaDbContext>();
+            builder.Services.AddScoped<IProjectService, ProjectService>();
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<ISkillService, SkillService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
