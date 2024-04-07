@@ -14,10 +14,10 @@ namespace DevFreela.Application.Services.Interfaces
         List<ProjectViewModel> GetAll(int pageNumber, int pageSize);
         ProjectDetailsViewModel GetById(int id);
         int Create(NewProjectInputModel inputModel);
-        void Update(UpdateProjectInputModel inputModel);
+        void Update(int id, UpdateProjectInputModel inputModel);
         void Delete(int id);
         void Start(int id);
         void Finish(int id);
-        void CreateComment(CreateProjectCommentInputModel inputModel); 
+        void CreateComment(CreateProjectCommentInputModel inputModel);
     }
 }

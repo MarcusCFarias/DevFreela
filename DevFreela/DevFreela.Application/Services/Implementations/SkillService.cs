@@ -28,6 +28,7 @@ namespace DevFreela.Application.Services.Implementations
                 .ToList();
 
             return skillsViewModel;
+            //return new List<SkillViewModel>();
         }
     }
 }

@@ -24,8 +24,11 @@ namespace DevFreela.Application.Services.Implementations
             var user = new User(userInputModel.FullName, userInputModel.Email, userInputModel.BirthDate);
 
             _dbContext.Users.Add(user);
+            _dbContext.SaveChanges();
 
             return user.Id;
+
+            //return 1;
         }
 
         public UserViewModel GetUser(int id)
@@ -40,6 +43,8 @@ namespace DevFreela.Application.Services.Implementations
             var userViewModel = new UserViewModel(user.FullName, user.Email);
 
             return userViewModel;
+
+            //return new UserViewModel("", "");
         }
     }
 }

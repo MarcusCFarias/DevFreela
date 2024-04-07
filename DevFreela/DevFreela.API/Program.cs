@@ -2,6 +2,7 @@
 using DevFreela.Infrastructure.Persistance;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.Services.Implementations;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevFreela.API
 {
@@ -13,7 +14,11 @@ namespace DevFreela.API
 
             // Add services to the container.
 
-            builder.Services.AddSingleton<DevFreelaDbContext>();
+            builder.Services.AddDbContext<DevFreelaDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });            
+
             builder.Services.AddScoped<IProjectService, ProjectService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<ISkillService, SkillService>();

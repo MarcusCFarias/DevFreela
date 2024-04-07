@@ -12,9 +12,5 @@ namespace DevFreela.API.Controllers
         {
             _skillService = skillService;
         }
-        public IActionResult Index()
-        {
-            return Ok();
-        }
     }
 }

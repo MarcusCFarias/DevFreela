@@ -50,7 +50,7 @@ namespace DevFreela.Controllers
 
             return CreatedAtAction(nameof(GetById), new { id = id }, inputModel);
         }
-        
+
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] UpdateProjectInputModel inputModel)
         {
@@ -59,7 +59,7 @@ namespace DevFreela.Controllers
                 return BadRequest();
             }
 
-            _projectService.Update(inputModel);
+            _projectService.Update(id, inputModel);
 
             return NoContent();
         }
