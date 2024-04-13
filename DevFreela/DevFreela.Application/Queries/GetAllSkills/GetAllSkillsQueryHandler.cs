@@ -1,25 +1,27 @@
-﻿using DevFreela.Application.Services.Interfaces;
+﻿
 using DevFreela.Application.ViewModels.Skill;
 using DevFreela.Infrastructure.Persistance;
-using Microsoft.EntityFrameworkCore;
+using MediatR;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace DevFreela.Application.Services.Implementations
+namespace DevFreela.Application.Queries.GetAllSkills
 {
-    public class SkillService : ISkillService
+    public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillViewModel>>
     {
         private readonly DevFreelaDbContext _dbContext;
-
-        public SkillService(DevFreelaDbContext dbContext)
+        public GetAllSkillsQueryHandler(DevFreelaDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public List<SkillViewModel> GetAll()
+        public async Task<List<SkillViewModel>> Handle(GetAllSkillsQuery request, CancellationToken cancellationToken)
         {
             var skills = _dbContext.Skills;
 
@@ -28,7 +30,6 @@ namespace DevFreela.Application.Services.Implementations
                 .ToList();
 
             return skillsViewModel;
-            //return new List<SkillViewModel>();
         }
     }
 }
