@@ -1,5 +1,7 @@
-﻿using DevFreela.Infrastructure.Persistance;
+﻿using DevFreela.Core.Repositories;
+using DevFreela.Infrastructure.Persistance;
 using DevFreela.Infrastructure.Persistence;
+using DevFreela.Infrastructure.Persistence.Repositories;
 using MediatR;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -14,19 +16,20 @@ namespace DevFreela.Application.Commands.StartProject
 {
     public class StartProjectCommandHandler : IRequestHandler<StartProjectCommand, Unit>
     {
-        private readonly DevFreelaDbContext _dbContext;
+        private readonly IProjectRepository _projectRepository;
         
-        public StartProjectCommandHandler(DevFreelaDbContext dbContext, IConfiguration configuration)
+        public StartProjectCommandHandler(IProjectRepository projectRepository)
         {
-            _dbContext = dbContext;
+            _projectRepository = projectRepository;
         }
 
         public async Task<Unit> Handle(StartProjectCommand request, CancellationToken cancellationToken)
         {
-            var project = await _dbContext.Projects.SingleOrDefaultAsync(p => p.Id == request.Id);
+            var project = await _projectRepository.GetByIdAsync(request.Id);
 
             project.Start();
-            await _dbContext.SaveChangesAsync();
+
+            await _projectRepository.SaveChangesAsync();
 
             return Unit.Value;
         }

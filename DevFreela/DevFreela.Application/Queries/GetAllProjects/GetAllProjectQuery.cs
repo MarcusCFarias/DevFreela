@@ -7,11 +7,8 @@ namespace DevFreela.Application.Queries.GetAllProjects
 {
     public class GetAllProjectsQuery : IRequest<List<ProjectViewModel>>
     {
-        public GetAllProjectsQuery(string query)
+        public GetAllProjectsQuery()
         {
-            Query = query;
         }
-
-        public string Query { get; private set; }
     }
 }

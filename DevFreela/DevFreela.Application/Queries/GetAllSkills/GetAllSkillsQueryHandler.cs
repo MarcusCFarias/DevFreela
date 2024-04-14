@@ -1,5 +1,6 @@
 ﻿
 using DevFreela.Application.ViewModels.Skill;
+using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistance;
 using MediatR;
 using Microsoft.Data.SqlClient;
@@ -15,15 +16,15 @@ namespace DevFreela.Application.Queries.GetAllSkills
 {
     public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillViewModel>>
     {
-        private readonly DevFreelaDbContext _dbContext;
-        public GetAllSkillsQueryHandler(DevFreelaDbContext dbContext)
+        private readonly ISkillRepository _skillRepository;
+        public GetAllSkillsQueryHandler(ISkillRepository skillRepository)
         {
-            _dbContext = dbContext;
+            _skillRepository = skillRepository;
         }
 
         public async Task<List<SkillViewModel>> Handle(GetAllSkillsQuery request, CancellationToken cancellationToken)
         {
-            var skills = _dbContext.Skills;
+            var skills = await _skillRepository.GetAllAsync();
 
             var skillsViewModel = skills
                 .Select(s => new SkillViewModel(s.Description))

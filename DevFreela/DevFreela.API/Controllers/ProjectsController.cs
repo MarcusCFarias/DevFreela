@@ -1,4 +1,5 @@
-﻿using DevFreela.Application.Commands.CreateProject;
+﻿using DevFreela.Application.Commands.CreateComment;
+using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Commands.DeleteProject;
 using DevFreela.Application.Commands.FinishProject;
 using DevFreela.Application.Commands.StartProject;
@@ -24,9 +25,9 @@ namespace DevFreela.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get(string query)
+        public async Task<IActionResult> Get()
         {
-            var getAllProjectsQuery = new GetAllProjectsQuery(query);
+            var getAllProjectsQuery = new GetAllProjectsQuery();
 
             var projects = await _mediator.Send(getAllProjectsQuery);
 
@@ -62,8 +63,8 @@ namespace DevFreela.Controllers
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] UpdateProjectCommand command)
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] UpdateProjectCommand command)
         {
             if (command.Description.Length > 200)
             {
@@ -85,8 +86,8 @@ namespace DevFreela.Controllers
             return NoContent();
         }
 
-        [HttpPost("{id}/comments")]
-        public async Task<IActionResult> PostComment(int id, [FromBody] CreateProjectCommand command)
+        [HttpPost("comments")]
+        public async Task<IActionResult> PostComment([FromBody] CreateCommentCommand command)
         {
             await _mediator.Send(command);
 
