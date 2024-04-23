@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Infrastructure.Configurations
 {
-    internal class SkillConfiguration : BaseEntityConfiguration<Skill>
+    public class SkillConfiguration : BaseEntityConfiguration<Skill>
     {
         public override void Configure(EntityTypeBuilder<Skill> builder)
         {

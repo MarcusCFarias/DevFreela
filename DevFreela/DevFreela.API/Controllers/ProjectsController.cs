@@ -9,12 +9,14 @@ using DevFreela.Application.InputModels.Projects;
 using DevFreela.Application.Queries.GetAllProjects;
 using DevFreela.Application.Queries.GetProjectById;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevFreela.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ProjectsController : ControllerBase
     {
 
@@ -52,11 +54,6 @@ namespace DevFreela.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] CreateProjectCommand command)
         {
-            if (command.Title.Length > 50)
-            {
-                return BadRequest();
-            }
-
             //var id = _projectService.Create(inputModel);
             var id = _mediator.Send(command);
 

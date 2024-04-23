@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Infrastructure.Configurations
 {
-    internal class UserConfiguration : BaseEntityConfiguration<User>
+    public class UserConfiguration : BaseEntityConfiguration<User>
     {
         public override void Configure(EntityTypeBuilder<User> builder)
         {
@@ -25,6 +25,14 @@ namespace DevFreela.Infrastructure.Configurations
                 .HasMaxLength(50)
                 .IsRequired();
 
+            builder.Property(x => x.Password)
+                .HasMaxLength(72)
+                .IsRequired();
+
+            builder.Property(x => x.Role)
+                .HasMaxLength(32)
+                .IsRequired();
+
             builder.Property(x => x.BirthDate)
                 .HasColumnType("DATE")
                 .IsRequired();
@@ -32,8 +40,6 @@ namespace DevFreela.Infrastructure.Configurations
             builder.Property(x => x.IsActive)
                 .HasDefaultValue(true)
                 .IsRequired();
-
-
         }
     }
 

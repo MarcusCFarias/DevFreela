@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Infrastructure.Configurations
 {
-    internal class BaseEntityConfiguration<TBase> : IEntityTypeConfiguration<TBase> where TBase : BaseEntity
+    public class BaseEntityConfiguration<TBase> : IEntityTypeConfiguration<TBase> where TBase : BaseEntity
     {
         public virtual void Configure(EntityTypeBuilder<TBase> builder)
         {

@@ -1,6 +1,4 @@
-﻿using DevFreela.Core.Repositories;
-using DevFreela.Infrastructure.Persistance;
-using DevFreela.Infrastructure.Persistence;
+﻿using DevFreela.Application.Repositories;
 using MediatR;
 using System;
 using System.Collections.Generic;

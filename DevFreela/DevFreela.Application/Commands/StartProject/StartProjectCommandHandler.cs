@@ -1,16 +1,5 @@
-﻿using DevFreela.Core.Repositories;
-using DevFreela.Infrastructure.Persistance;
-using DevFreela.Infrastructure.Persistence;
-using DevFreela.Infrastructure.Persistence.Repositories;
+﻿using DevFreela.Application.Repositories;
 using MediatR;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace DevFreela.Application.Commands.StartProject
 {

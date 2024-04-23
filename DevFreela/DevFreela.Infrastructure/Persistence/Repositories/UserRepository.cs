@@ -1,5 +1,7 @@
-﻿using DevFreela.Core.Entities;
-using DevFreela.Core.Repositories;
+﻿using DevFreela.Application.Repositories;
+using DevFreela.Core.Entities;
+using DevFreela.Infrastructure.Persistance;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +12,28 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public Task AddAsync(User user)
+        private readonly DevFreelaDbContext _dbContext;
+        public UserRepository(DevFreelaDbContext dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
+        }
+        public async Task AddAsync(User user)
+        {
+            await _dbContext.Users.AddAsync(user);
+        }
+        public async Task<User> GetByIdAsync(int id)
+        {
+            return await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == id);
         }
 
-        public Task<List<User>> GetAllAsync()
+        public Task<User> GetUserAsync(string email, string passwordHash)
         {
-            throw new NotImplementedException();
+            return _dbContext.Users.SingleOrDefaultAsync(u => u.Email == email && u.Password == passwordHash);
         }
 
-        public Task<User> GetByIdAsync(int id)
+        public async Task SaveChangesAsync()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task SaveChangesAsync()
-        {
-            throw new NotImplementedException();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

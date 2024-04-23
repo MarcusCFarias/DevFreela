@@ -1,8 +1,6 @@
-﻿using DevFreela.Core.Entities;
-using DevFreela.Core.Repositories;
-using DevFreela.Infrastructure.Persistance;
+﻿using DevFreela.Application.Repositories;
+using DevFreela.Core.Entities;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;

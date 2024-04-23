@@ -1,10 +1,7 @@
-﻿using DevFreela.Application.ViewModels;
+﻿using DevFreela.Application.Repositories;
+using DevFreela.Application.ViewModels;
 using DevFreela.Application.ViewModels.User;
-using DevFreela.Core.Repositories;
-using DevFreela.Infrastructure.Persistance;
-using DevFreela.Infrastructure.Persistence;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 

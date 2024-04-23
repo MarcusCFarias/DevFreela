@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Infrastructure.Configurations
 {
-    internal class ProjectCommentConfiguration: BaseEntityConfiguration<ProjectComment>
+    public class ProjectCommentConfiguration: BaseEntityConfiguration<ProjectComment>
     {
         public override void Configure(EntityTypeBuilder<ProjectComment> builder)
         {

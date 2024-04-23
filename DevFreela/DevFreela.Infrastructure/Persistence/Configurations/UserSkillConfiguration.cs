@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Infrastructure.Configurations
 {
-    internal class UserSkillConfiguration : BaseEntityConfiguration<UserSkill>
+    public class UserSkillConfiguration : BaseEntityConfiguration<UserSkill>
     {
         public override void Configure(EntityTypeBuilder<UserSkill> builder)
         {

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Infrastructure.Configurations
 {
-    internal class ProjectConfiguration : BaseEntityConfiguration<Project>
+    public class ProjectConfiguration : BaseEntityConfiguration<Project>
     {
         public override void Configure(EntityTypeBuilder<Project> builder)
         {

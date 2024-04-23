@@ -1,10 +1,7 @@
 ﻿
+using DevFreela.Application.Repositories;
 using DevFreela.Application.ViewModels.Skill;
-using DevFreela.Core.Repositories;
-using DevFreela.Infrastructure.Persistance;
 using MediatR;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +18,6 @@ namespace DevFreela.Application.Queries.GetAllSkills
         {
             _skillRepository = skillRepository;
         }
-
         public async Task<List<SkillViewModel>> Handle(GetAllSkillsQuery request, CancellationToken cancellationToken)
         {
             var skills = await _skillRepository.GetAllAsync();

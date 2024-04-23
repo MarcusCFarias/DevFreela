@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevFreela.Core.Repositories
+namespace DevFreela.Application.Repositories
 {
     public interface IUserRepository
     {
-        Task<List<User>> GetAllAsync();
         Task<User> GetByIdAsync(int id);
         Task AddAsync(User user);
         Task SaveChangesAsync();
+        Task<User> GetUserAsync(string email, string passwordHash);
     }
 }
