@@ -102,11 +102,16 @@ namespace DevFreela.Controllers
         }
 
         [HttpPut("{id}/finish")]
-        public async Task<IActionResult> Finish(int id)
+        public async Task<IActionResult> Finish(int id, [FromBody] FinishProjectCommand command)
         {
-            var command = new FinishProjectCommand(id);
+            command.Id = id;
 
-            await _mediator.Send(command);
+            var result = await _mediator.Send(command);
+
+            if (!result)
+            {
+                return BadRequest("Pagamento não processado");
+            }
 
             return NoContent();
         }
