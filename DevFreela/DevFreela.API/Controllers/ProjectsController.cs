@@ -113,7 +113,7 @@ namespace DevFreela.Controllers
                 return BadRequest("Pagamento não processado");
             }
 
-            return NoContent();
+            return Accepted();
         }
     }
 }

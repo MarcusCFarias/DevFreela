@@ -1,4 +1,5 @@
 
+using DevFreela.Payments.API.Consumers;
 using DevFreela.Payments.API.Services;
 
 namespace DevFreela.Payments.API
@@ -18,6 +19,7 @@ namespace DevFreela.Payments.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<IPaymentService, PaymentService>();
+            builder.Services.AddHostedService<ProcessPaymentConsumer>();
 
             var app = builder.Build();
 

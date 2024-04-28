@@ -15,6 +15,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using DevFreela.Application.Interfaces.Services;
 using DevFreela.Infrastructure.Payment;
+using DevFreela.Infrastructure.MessageBus;
+using DevFreela.Application.Consumers;
 
 namespace DevFreela.API
 {
@@ -38,6 +40,8 @@ namespace DevFreela.API
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IPaymentService, PaymentService>();
+            builder.Services.AddScoped<IMessageBusService, MessageBusService>();
+            builder.Services.AddHostedService<PaymentApprovedCosumer>();
 
             builder.Services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
 
