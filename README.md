@@ -36,14 +36,20 @@ DevFreela is a training project designed in ASP.NET Core to practice new trends 
 - Messaging with RabbitMQ
 - MicroServices with Payment
 
-## 5. Getting started
-#### 5.1 Prerequisities
+## 5. Patterns and Architecture
+- Repository
+- Clean Architecture
+- CQRS
+- Fluent Validation
+
+## 6. Getting started
+#### 6.1 Prerequisities
 - Erlang and RabbitMQ installed
 - .NET 8
 - References from project (just download them by nuget)
 
-## 6. Contribuiting
+## 7. Contribuiting
 You can send how many PR's do you want, I'll be glad to analyse and accept them! And if you have any question about the project just ask...
 
-## 7. License
+## 8. License
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/MarcusCFarias/devfreela/blob/main/LICENSE) file for details
