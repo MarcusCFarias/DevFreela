@@ -22,13 +22,25 @@
 DevFreela is a training project designed in ASP.NET Core to practice new trends and technologies in software development. It offers hands-on experience with modern tools and methodologies, promoting growth and adaptability. Additionally, the project enables the exploration of efficient coding practices and project management skills, enhancing my ability to deliver high-quality software solutions.
 
 ## 3. Functionalities
+- Users Login and Register
+- CRUD Projects
+- Add Project comments
+- Change Project Status
+- Payments
 
-## 4. Technologies Used and Discussion
-#### 4.1
+## 4. Technologies Used
+- ASP.NET Core 8
+- Entity Framework Core
+- SQL Server
+- Authentication e Authorization com JWT Bearer
+- Messaging with RabbitMQ
+- MicroServices with Payment
 
 ## 5. Getting started
 #### 5.1 Prerequisities
-#### 5.2 Installing
+- Erlang and RabbitMQ installed
+- .NET 8
+- References from project (just download them by nuget)
 
 ## 6. Contribuiting
 You can send how many PR's do you want, I'll be glad to analyse and accept them! And if you have any question about the project just ask...
