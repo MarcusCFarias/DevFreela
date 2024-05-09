@@ -19,13 +19,10 @@
 
 ## 2. About this project
 #### 2.1 Description
-
-#### 2.2 Why?
-
-#### 2.3 Observations
-- Not done yet, constantly pushing new features
+DevFreela is a training project designed in ASP.NET Core to practice new trends and technologies in software development. It offers hands-on experience with modern tools and methodologies, promoting growth and adaptability. Additionally, the project enables the exploration of efficient coding practices and project management skills, enhancing my ability to deliver high-quality software solutions.
 
 ## 3. Functionalities
+
 ## 4. Technologies Used and Discussion
 #### 4.1
 
