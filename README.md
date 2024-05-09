@@ -9,6 +9,13 @@
 </p>
 
 ## 1. Screenshots or Demo
+![PaymentsProject](https://github.com/MarcusCFarias/DevFreela/assets/77988058/0a21fe3a-552c-422e-8e8a-6779cf652889)
+![PaymentsAPI](https://github.com/MarcusCFarias/DevFreela/assets/77988058/253d611a-3f32-499f-850b-ede288d71f8d)
+![DevFreelaProject](https://github.com/MarcusCFarias/DevFreela/assets/77988058/0b69dc7d-b4a2-4506-9a87-14beef28a8ba)
+![DevFreelaAPIProject](https://github.com/MarcusCFarias/DevFreela/assets/77988058/5bae6275-83df-49db-b2e2-285018215db4)
+![DevFreelaAPILogin](https://github.com/MarcusCFarias/DevFreela/assets/77988058/6c56575f-8b26-4cfb-9453-48a9dc0b7a51)
+![DevFreelaAPI2](https://github.com/MarcusCFarias/DevFreela/assets/77988058/d751a17e-a1ed-4dd8-a7c6-6915b418084d)
+![DevFreelaAPI1](https://github.com/MarcusCFarias/DevFreela/assets/77988058/4ee26e39-7831-439c-a1ba-27da48c964a4)
 
 ## 2. About this project
 #### 2.1 Description
